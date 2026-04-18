@@ -11,7 +11,7 @@ public class Metodos {
         String url;
         String titulo;
 
-        System.out.println("-----------------------------");
+        System.out.println("-------------------------");
         System.out.print("Ingrese la URL: ");
         url = sc.nextLine();
 
@@ -33,9 +33,9 @@ public class Metodos {
         System.out.println("Se cerró: " + eliminada.getTitulo());
 
         if (pila.isEmpty()) {
-            System.out.println("-----------------------------");
+            System.out.println("-------------------------");
             System.out.println("No hay más páginas anteriores.");
-            System.out.println("-----------------------------");
+            System.out.println("-------------------------");
         } else {
             ObjPaginaWeb actual = pila.peek();
             System.out.println("----- Página actual -----");
@@ -62,7 +62,7 @@ public class Metodos {
             ObjPaginaWeb p = pila.get(i);
             System.out.println("Título: " + p.getTitulo());
             System.out.println("URL: " + p.getUrl());
-            System.out.println("---------------------");
+            System.out.println("-------------------------");
         }
     }
 }

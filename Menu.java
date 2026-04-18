@@ -24,8 +24,6 @@ public class Menu {
             System.out.println("4. Salir");
             System.out.println("-------------------------");
             System.out.print("Ingrese la opción deseada: ");
-            
-            
 
             opt = v.ValidarEntero(sc);
             sc.nextLine();
