@@ -5,7 +5,8 @@ public class Validaciones {
     public int ValidarEntero(Scanner sc) {
 
         while (!sc.hasNextInt()) {
-            System.out.println("Por favor digite un número");
+            System.out.println("-------------------------");
+            System.out.print("Por favor digite un número: ");
             sc.nextLine();
         }
         return sc.nextInt();
@@ -14,7 +15,8 @@ public class Validaciones {
     public Double ValidarDecimal(Scanner sc) {
 
         while (!sc.hasNextDouble()) {
-            System.out.println("Por favor digite un número");
+            System.out.println("-------------------------");
+            System.out.print("Por favor digite un número: ");
             sc.nextLine();
         }
         return sc.nextDouble();

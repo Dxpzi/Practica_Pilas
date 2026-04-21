@@ -40,11 +40,15 @@ public class Menu {
                     break;
                 case 4:
                     seguir = false;
+                    System.out.println("-------------------------");
                     System.out.println("Saliendo...");
+                    System.out.println("-------------------------");
                     break;
 
                 default:
+                    System.out.println("-------------------------");
                     System.out.println("Opción no válida");
+                    System.out.println("-------------------------");
                     break;
             }
 

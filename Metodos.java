@@ -14,10 +14,11 @@ public class Metodos {
         System.out.println("-------------------------");
         System.out.print("Ingrese la URL: ");
         url = sc.nextLine();
-
-        System.out.print("Ingrese el titulo: ");
+ 
+        System.out.print("Ingrese el título: ");
         titulo = sc.nextLine();
 
+        // Crea un objeto de tipo página web.
         ObjPaginaWeb pagina = new ObjPaginaWeb(url, titulo, 0);
 
         pila.push(pagina);
@@ -25,22 +26,32 @@ public class Metodos {
         return pila;
     }
 
-    // Retroceder (pop + peek)
     public Stack<ObjPaginaWeb> retroceder(Stack<ObjPaginaWeb> pila) {
 
-        ObjPaginaWeb eliminada = pila.pop();
-
-        System.out.println("Se cerró: " + eliminada.getTitulo());
-
+        // Validación: solo cuando intentan retroceder sin páginas.
         if (pila.isEmpty()) {
             System.out.println("-------------------------");
-            System.out.println("No hay más páginas anteriores.");
+            System.out.println("No hay páginas para retroceder.");
             System.out.println("-------------------------");
-        } else {
+
+            return pila;
+        }
+
+        // Elimina la página actual
+        ObjPaginaWeb eliminada = pila.pop();
+
+        System.out.println("-------------------------");
+        System.out.println("Se cerró: " + eliminada.getTitulo());
+        System.out.println("-------------------------");
+
+        // Se muestra la página actual si aún hay elementos.
+        if (!pila.isEmpty()) {
             ObjPaginaWeb actual = pila.peek();
+
             System.out.println("----- Página actual -----");
             System.out.println("Título: " + actual.getTitulo());
             System.out.println("URL: " + actual.getUrl());
+            System.out.println("-------------------------");
         }
 
         return pila;
@@ -49,6 +60,7 @@ public class Metodos {
 
     public void verHistorial(Stack<ObjPaginaWeb> pila) {
 
+        // Verifica si la pila está vacía.
         if (pila.isEmpty()) {
             System.out.println("No hay historial");
 
@@ -58,8 +70,11 @@ public class Metodos {
 
         System.out.println("----- VER HISTORIAL -----");
 
+        // Recorre la pila desde la más reciente hasta la más antigua.
         for (int i = pila.size() - 1; i >= 0; i--) {
+
             ObjPaginaWeb p = pila.get(i);
+
             System.out.println("Título: " + p.getTitulo());
             System.out.println("URL: " + p.getUrl());
             System.out.println("-------------------------");
